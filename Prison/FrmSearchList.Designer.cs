@@ -1,0 +1,316 @@
+﻿namespace Prison
+{
+    partial class FrmSearchList
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSearchList));
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pri_reason = new System.Windows.Forms.Label();
+            this.pri_id = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.pri_address = new System.Windows.Forms.Label();
+            this.pri_ondata = new System.Windows.Forms.Label();
+            this.pri_sex = new System.Windows.Forms.Label();
+            this.pri_age = new System.Windows.Forms.Label();
+            this.pri_name = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(24, 538);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 74);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "返回";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73F));
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.pri_reason, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.pri_id, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.pri_address, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.pri_ondata, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.pri_sex, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.pri_age, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pri_name, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(191, 40);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 363);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(109, 158);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(290, 28);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox4.Location = new System.Drawing.Point(109, 228);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(290, 28);
+            this.textBox4.TabIndex = 5;
+            // 
+            // pri_reason
+            // 
+            this.pri_reason.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_reason.AutoSize = true;
+            this.pri_reason.Location = new System.Drawing.Point(25, 340);
+            this.pri_reason.Name = "pri_reason";
+            this.pri_reason.Size = new System.Drawing.Size(80, 18);
+            this.pri_reason.TabIndex = 17;
+            this.pri_reason.Text = "入狱原因";
+            // 
+            // pri_id
+            // 
+            this.pri_id.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_id.AutoSize = true;
+            this.pri_id.Location = new System.Drawing.Point(25, 305);
+            this.pri_id.Name = "pri_id";
+            this.pri_id.Size = new System.Drawing.Size(80, 18);
+            this.pri_id.TabIndex = 16;
+            this.pri_id.Text = "身份证号";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox3.Location = new System.Drawing.Point(109, 193);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(290, 28);
+            this.textBox3.TabIndex = 4;
+            // 
+            // pri_address
+            // 
+            this.pri_address.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_address.AutoSize = true;
+            this.pri_address.Location = new System.Drawing.Point(61, 270);
+            this.pri_address.Name = "pri_address";
+            this.pri_address.Size = new System.Drawing.Size(44, 18);
+            this.pri_address.TabIndex = 15;
+            this.pri_address.Text = "籍贯";
+            // 
+            // pri_ondata
+            // 
+            this.pri_ondata.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_ondata.AutoSize = true;
+            this.pri_ondata.Location = new System.Drawing.Point(25, 235);
+            this.pri_ondata.Name = "pri_ondata";
+            this.pri_ondata.Size = new System.Drawing.Size(80, 18);
+            this.pri_ondata.TabIndex = 14;
+            this.pri_ondata.Text = "入狱时间";
+            // 
+            // pri_sex
+            // 
+            this.pri_sex.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_sex.AutoSize = true;
+            this.pri_sex.Location = new System.Drawing.Point(61, 200);
+            this.pri_sex.Name = "pri_sex";
+            this.pri_sex.Size = new System.Drawing.Size(44, 18);
+            this.pri_sex.TabIndex = 13;
+            this.pri_sex.Text = "性别";
+            // 
+            // pri_age
+            // 
+            this.pri_age.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_age.AutoSize = true;
+            this.pri_age.Location = new System.Drawing.Point(61, 165);
+            this.pri_age.Name = "pri_age";
+            this.pri_age.Size = new System.Drawing.Size(44, 18);
+            this.pri_age.TabIndex = 12;
+            this.pri_age.Text = "年龄";
+            // 
+            // pri_name
+            // 
+            this.pri_name.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pri_name.AutoSize = true;
+            this.pri_name.Location = new System.Drawing.Point(61, 130);
+            this.pri_name.Name = "pri_name";
+            this.pri_name.Size = new System.Drawing.Size(44, 18);
+            this.pri_name.TabIndex = 11;
+            this.pri_name.Text = "姓名";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox1.Location = new System.Drawing.Point(109, 123);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(290, 28);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox5.Location = new System.Drawing.Point(109, 263);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(290, 28);
+            this.textBox5.TabIndex = 6;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox7.Location = new System.Drawing.Point(109, 333);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(290, 28);
+            this.textBox7.TabIndex = 8;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.textBox6.Location = new System.Drawing.Point(109, 298);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(1);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(290, 28);
+            this.textBox6.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(111, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 116);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(310, 420);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 44);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "添加";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(404, 420);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 44);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "修改";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(501, 420);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 44);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "删除";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // FrmSearchList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 625);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.button1);
+            this.Name = "FrmSearchList";
+            this.Text = "FrmSearch";
+            this.Load += new System.EventHandler(this.FrmSearchList_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label pri_reason;
+        private System.Windows.Forms.Label pri_id;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label pri_address;
+        private System.Windows.Forms.Label pri_ondata;
+        private System.Windows.Forms.Label pri_sex;
+        private System.Windows.Forms.Label pri_age;
+        private System.Windows.Forms.Label pri_name;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+    }
+}
