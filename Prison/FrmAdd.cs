@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
+
     
 
 namespace Prison
@@ -37,8 +37,8 @@ namespace Prison
             string name = textBox1.Text.ToString();
             string age = textBox2.Text.ToString();
             string sex = textBox3.Text.ToString();
-            string ondata = textBox4.Text.ToString();
-            string address = textBox5.Text.ToString();
+            string ondata = dateTimePicker1.Text.ToString();
+            string address = provience.SelectedItem.ToString()+comboBox1.SelectedItem.ToString()+comboBox2.SelectedItem.ToString();
             string reason = textBox7.Text.ToString();
 
             string id = textBox6.Text.ToString();
@@ -84,8 +84,8 @@ namespace Prison
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
+            dateTimePicker1.Text = "";
+            provience.SelectedItem = "";
             textBox6.Text = "";
             textBox7.Text = "";
             textBox1.Focus();
@@ -101,8 +101,8 @@ namespace Prison
             string name = textBox1.Text.ToString();
             string age = textBox2.Text.ToString();
             string sex = textBox3.Text.ToString();
-            string ondata = textBox4.Text.ToString();
-            string address = textBox5.Text.ToString();
+            string ondata = dateTimePicker1.Text.ToString();
+            string address = provience.SelectedItem.ToString();
             string id = textBox6.Text.ToString();
             string reason = textBox7.Text.ToString();
 
@@ -126,6 +126,70 @@ namespace Prison
                 MessageBox.Show(ex.Message);
             }
             sqlCnt.Close();
+        }
+
+
+        private void provience_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int s = (int)provience.SelectedIndex;
+            comboBox1.Items.Clear();
+            switch (s)
+            {
+                case 0:
+                    comboBox1.Items.Add("巴南区");
+                    comboBox1.Items.Add("北碚区");
+                    comboBox1.Items.Add("渝北区");
+                    comboBox1.Items.Add("涪陵区");
+                    comboBox1.Items.Add("长寿区");
+                    comboBox1.Items.Add("秀山土家族苗族自治县");
+                    comboBox1.Items.Add("酉阳土家族苗族自治县");
+                    comboBox1.Items.Add("彭水苗族土家族自治县");
+                    comboBox1.Items.Add("垫江县");
+                    break;
+                case 1:
+                    comboBox1.Items.Add("遂宁市");
+                    comboBox1.Items.Add("成都市");
+                    comboBox1.Items.Add("德阳市");
+                    comboBox1.Items.Add("攀枝花市");
+                    comboBox1.Items.Add("乐山市");
+                    break;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int c = (int)comboBox1.SelectedIndex;
+            comboBox2.Items.Clear();
+            if(comboBox1.SelectedItem.ToString() == "巴南区")
+            {
+                comboBox2.Items.Add("");
+            }
+            else if (comboBox1.SelectedItem.ToString() == "遂宁市")
+            {
+                comboBox2.Items.Add("船山区");
+                comboBox2.Items.Add("安居区");
+                comboBox2.Items.Add("射洪县");
+                comboBox2.Items.Add("蓬溪县");
+                comboBox2.Items.Add("大英县");
+            }else if (comboBox1.SelectedItem.ToString() == "成都市")
+            {
+                comboBox2.Items.Add("蒲江县");
+                comboBox2.Items.Add("大邑县");
+                comboBox2.Items.Add("金堂县");
+                comboBox2.Items.Add("银郫县");
+                comboBox2.Items.Add("崇庆县");
+            }
+              
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

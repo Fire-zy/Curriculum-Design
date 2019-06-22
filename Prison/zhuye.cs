@@ -13,13 +13,12 @@ namespace Prison
     public partial class zhuye : Form
     {
         public Login n1 = null;
-        public FrmAdd fs = new FrmAdd();
         public FrmSearch fsc = new FrmSearch();
         public FrmAdd fsa = new FrmAdd();
-        public FrmHistory fg = new FrmHistory();
         public FrmPoliceman fgs = new FrmPoliceman();
         public FrmTime pf = new FrmTime();
         public FrmRoom fr = new FrmRoom();
+        public Location la = new Location();
         public zhuye()
         {
             InitializeComponent();
@@ -39,11 +38,6 @@ namespace Prison
             n1.Show();
         }
 
-        private void zhuye_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             fsa.z = this;
@@ -51,13 +45,7 @@ namespace Prison
             fsa.Show();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            fg.z = this;
-            this.Hide();
-            fg.Show();
-        }
-
+      
         private void label4_Click(object sender, EventArgs e)
         {
             fgs.z = this;
@@ -77,6 +65,22 @@ namespace Prison
             fr.z = this;
             this.Hide();
             fr.Show();
+        }
+        private void About_Click(object sender, EventArgs e)
+        {
+            AboutBox_AvoutUs ab = new AboutBox_AvoutUs();
+            ab.ShowDialog();
+        }
+
+        private void AccountManage_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+            la.z = this;
+            this.Hide();
+            la.Show();
         }
     }
 }

@@ -34,6 +34,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.pri_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pri_age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pri_sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +46,6 @@
             this.pri_ondata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pri_offdata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pri_now = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +112,36 @@
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(790, 12);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(81, 42);
+            this.btnsave.TabIndex = 18;
+            this.btnsave.Text = "保存";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(895, 12);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(81, 42);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "添加行";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(998, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(81, 42);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "删除行";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // pri_name
             // 
             this.pri_name.DataPropertyName = "pri_name";
@@ -145,7 +175,7 @@
             // pri_reason
             // 
             this.pri_reason.DataPropertyName = "pri_reason";
-            this.pri_reason.HeaderText = "入狱原因";
+            this.pri_reason.HeaderText = "服刑类型";
             this.pri_reason.Name = "pri_reason";
             this.pri_reason.Width = 120;
             // 
@@ -170,36 +200,6 @@
             this.pri_now.Name = "pri_now";
             this.pri_now.Width = 120;
             // 
-            // btnsave
-            // 
-            this.btnsave.Location = new System.Drawing.Point(790, 12);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(81, 42);
-            this.btnsave.TabIndex = 18;
-            this.btnsave.Text = "保存";
-            this.btnsave.UseVisualStyleBackColor = true;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(895, 12);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(81, 42);
-            this.btnUpdate.TabIndex = 19;
-            this.btnUpdate.Text = "添加行";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(998, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(81, 42);
-            this.btnDelete.TabIndex = 20;
-            this.btnDelete.Text = "删除行";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // FrmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -216,7 +216,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "FrmHistory";
-            this.Text = "FrmHistory";
+            this.Text = "查找历史犯人";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,6 +230,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnsave;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn pri_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn pri_age;
         private System.Windows.Forms.DataGridViewTextBoxColumn pri_sex;
@@ -239,8 +242,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pri_ondata;
         private System.Windows.Forms.DataGridViewTextBoxColumn pri_offdata;
         private System.Windows.Forms.DataGridViewTextBoxColumn pri_now;
-        private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
     }
 }

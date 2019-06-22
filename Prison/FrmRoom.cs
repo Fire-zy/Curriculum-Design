@@ -160,5 +160,28 @@ namespace Prison
                     dataGridView1.Rows[e.RowIndex].HeaderCell.Value = "U";
             }
         }
+
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (i == e.RowIndex)
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.LightBlue;
+                else
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void AccountManage_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            AboutBox_AvoutUs ab = new AboutBox_AvoutUs();
+            ab.ShowDialog();
+        }
     }
 }

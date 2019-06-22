@@ -41,8 +41,12 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
+            this.AccountManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.About = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -60,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(120, 38);
+            this.label1.Location = new System.Drawing.Point(121, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 28);
             this.label1.TabIndex = 9;
@@ -68,7 +72,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(371, 24);
+            this.textBox1.Location = new System.Drawing.Point(374, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(205, 42);
@@ -84,12 +88,13 @@
             this.room_number,
             this.room_prison,
             this.room_leave});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 109);
+            this.dataGridView1.Location = new System.Drawing.Point(229, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(667, 446);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // room_number
@@ -117,7 +122,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
             this.pictureBox1.Size = new System.Drawing.Size(76, 74);
@@ -126,7 +131,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(605, 24);
+            this.button2.Location = new System.Drawing.Point(603, 65);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 42);
             this.button2.TabIndex = 17;
@@ -136,7 +141,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(701, 24);
+            this.btnsave.Location = new System.Drawing.Point(690, 65);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(81, 42);
             this.btnsave.TabIndex = 18;
@@ -146,7 +151,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(802, 24);
+            this.btnUpdate.Location = new System.Drawing.Point(777, 65);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(81, 42);
             this.btnUpdate.TabIndex = 19;
@@ -156,13 +161,40 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(889, 24);
+            this.btnDelete.Location = new System.Drawing.Point(864, 65);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(81, 42);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "删除行";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // menuStripMain
+            // 
+            this.menuStripMain.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AccountManage,
+            this.About});
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStripMain.Size = new System.Drawing.Size(1185, 34);
+            this.menuStripMain.TabIndex = 21;
+            this.menuStripMain.Text = "menuStrip1";
+            // 
+            // AccountManage
+            // 
+            this.AccountManage.Name = "AccountManage";
+            this.AccountManage.Size = new System.Drawing.Size(94, 28);
+            this.AccountManage.Text = "退出系统";
+            this.AccountManage.Click += new System.EventHandler(this.AccountManage_Click);
+            // 
+            // About
+            // 
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(58, 28);
+            this.About.Text = "关于";
+            this.About.Click += new System.EventHandler(this.About_Click);
             // 
             // FrmRoom
             // 
@@ -171,6 +203,7 @@
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1185, 665);
+            this.Controls.Add(this.menuStripMain);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnsave);
@@ -181,9 +214,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "FrmRoom";
-            this.Text = "FrmRoom";
+            this.Text = "房间管理";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +238,8 @@
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.MenuStrip menuStripMain;
+        private System.Windows.Forms.ToolStripMenuItem AccountManage;
+        private System.Windows.Forms.ToolStripMenuItem About;
     }
 }

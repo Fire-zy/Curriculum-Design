@@ -34,9 +34,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnsave = new System.Windows.Forms.Button();
             this.pol_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pol_age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pol_sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             this.pol_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pol_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pol_room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,13 +64,13 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(18, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 28);
+            this.label1.Size = new System.Drawing.Size(208, 28);
             this.label1.TabIndex = 3;
-            this.label1.Text = "请输入姓名/ID查找";
+            this.label1.Text = "请输入姓名查找";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(319, 12);
+            this.textBox1.Location = new System.Drawing.Point(232, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(398, 42);
@@ -78,7 +78,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(739, 12);
+            this.button2.Location = new System.Drawing.Point(652, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 42);
             this.button2.TabIndex = 5;
@@ -106,37 +106,8 @@
             this.dataGridView1.Size = new System.Drawing.Size(1461, 501);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(947, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 42);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "添加";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1105, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 42);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "删除";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnsave
-            // 
-            this.btnsave.Location = new System.Drawing.Point(860, 12);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(81, 42);
-            this.btnsave.TabIndex = 18;
-            this.btnsave.Text = "保存";
-            this.btnsave.UseVisualStyleBackColor = true;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // pol_name
             // 
@@ -187,6 +158,36 @@
             this.pol_room.Name = "pol_room";
             this.pol_room.Width = 120;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(860, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 42);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "添加";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(964, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 42);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "删除";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnsave
+            // 
+            this.btnsave.Location = new System.Drawing.Point(756, 12);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(98, 42);
+            this.btnsave.TabIndex = 18;
+            this.btnsave.Text = "保存";
+            this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
             // FrmPoliceman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -203,7 +204,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "FrmPoliceman";
-            this.Text = "FrmPoliceman";
+            this.Text = "警察";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

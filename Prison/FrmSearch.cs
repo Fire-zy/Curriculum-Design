@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Prison
 {
@@ -15,7 +16,6 @@ namespace Prison
     public partial class FrmSearch : Form
     {
         public zhuye z = null;
-        public FrmSearchList fsl = new FrmSearchList();
         public FrmSearch()
         {
             InitializeComponent();
@@ -37,143 +37,26 @@ namespace Prison
            sqlCnt = new SqlConnection(connstr);//实例化连接数据库的类的对象
             sqlCnt.Open();//调用对象中打开数据库的方法
             string content = textBox1.Text.ToString();//获得输入的内容
-            string sql = "select * from dbo.[PrisonAdd] ";//where [pri_name] like N'%" + content + "%'";//加百分号，模糊查询
-          
-            //if (string.IsNullOrEmpty(content))
-            //    {
-            //       MessageBox.Show("查找内容不能为空");
-            //    }
-            //    else
-            //    {
-                   // MessageBox.Show("输入错入/不存在该用户");
-                   //执行SQL语句
-                    SqlDataAdapter da = new SqlDataAdapter(sql,sqlCnt);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds,"个人资料");//参数1是DataSet对象，参数2是表名
+            string sql = "select * from dbo.[PrisonAdd] where [pri_name] like N'%" + content + "%'"; //加百分号，模糊查询
 
-                    //方法一，绑定数据到DataGridView
-                    //dataGridView1.DataSource = ds;
-                    //dataGridView1.DataMember = "个人资料";
-
-                    //方法二
-                    dt = ds.Tables["个人资料"];
-                    dataGridView1.DataSource = dt.DefaultView;
-                //}
-            //sqlCnt.Close();
-
-        }
-        //增加，删除，修改
-        private void btnsave_Click(object sender, EventArgs e)
-        {
-            for(int i = 0; i < dataGridView1.RowCount; i++)
+            if (string.IsNullOrEmpty(content))
             {
-                string sql = "";
-                string name = dataGridView1.Rows[i].Cells["pri_name"].Value.ToString();
-                string age = dataGridView1.Rows[i].Cells["pri_age"].Value.ToString();
-                string sex = dataGridView1.Rows[i].Cells["pri_sex"].Value.ToString();
-                string ondata = dataGridView1.Rows[i].Cells["pri_ondata"].Value.ToString();
-                string address = dataGridView1.Rows[i].Cells["pri_address"].Value.ToString();
-                string id = dataGridView1.Rows[i].Cells["pri_id"].Value.ToString();
-                string reason = dataGridView1.Rows[i].Cells["pri_reason"].Value.ToString();
-
-                if (dataGridView1.Rows[i].HeaderCell.Value == null)
-                {
-                    sql = "";
-                }
-                else if (dataGridView1.Rows[i].HeaderCell.Value.ToString() == "N")
-                {
-                    sql = "insert into PrisonAdd(pri_name,pri_age,pri_sex,pri_ondata,pri_address,pri_id,pri_reason) " +
-                        "values(N'" + name + "',N'" + age + "',N'" + sex + "',N'" + ondata + "',N'" + address + "',N'" + id + "',N'" + reason + "')";
-                }
-                else if (dataGridView1.Rows[i].HeaderCell.Value.ToString() == "D")
-                {
-                    sql = "delete from PrisonAdd where pri_id='" + id + "'";
-                }
-                else if (dataGridView1.Rows[i].HeaderCell.Value.ToString() == "U")
-                {
-                    sql = "update PrisonAdd set pri_name='" + name + "',pri_age='" + age + "',pri_sex='" + sex + "'," +
-                        "pri_ondata='" + ondata + "',pri_address='" + address + "',pri_reason='" + reason + "' " +
-                        "where pri_id='" + id + "'";
-                }
-                if(sql != "")
-                {
-                    try
-                    {
-                        SqlCommand comm = new SqlCommand(sql, sqlCnt);
-                        comm.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-
-                }
-                
-            }
-
-        }
-        
-
-        //添加行
-        public void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (dt == null)
-            {
-                //没有绑定数据时候的添加行
-                dataGridView1.Rows.Add();
-                int rc = dataGridView1.Rows.Count - 1;
-                dataGridView1.Rows[rc].HeaderCell.Value = "N";
+                MessageBox.Show("查找内容不能为空");
             }
             else
             {
-                //绑定数据后的添加行
-                DataRow dr = dt.NewRow();//创建一个和当前绑定表格具有相同架构的行
-                int index = dataGridView1.RowCount == 0 ? 0 : dataGridView1.CurrentRow.Index + 1;
-                dt.Rows.InsertAt(dr, index);//把空行加入到指定位置
-                dataGridView1.Rows[index].HeaderCell.Value = "N";//在行头显示"n"
+                // MessageBox.Show("输入错入/不存在该用户");
+                //执行SQL语句
+                SqlDataAdapter da = new SqlDataAdapter(sql,sqlCnt);
+                DataSet ds = new DataSet();
+                da.Fill(ds,"个人资料");//参数1是DataSet对象，参数2是表名
+                
+                dt = ds.Tables["个人资料"];
+                dataGridView1.DataSource = dt.DefaultView;
             }
+            // sqlCnt.Close();
         }
 
-        //删除行
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            foreach(DataGridViewRow row in dataGridView1.SelectedRows)
-            {
-                if (dataGridView1.Rows[row.Index].HeaderCell.Value == null)
-                {
-                    dataGridView1.Rows[row.Index].HeaderCell.Value = "D";
-                }
-                else if(dataGridView1.Rows[row.Index].HeaderCell.Value.ToString()=="N")
-                {
-                    dataGridView1.Rows.Remove(row);//参数：选中的行
-                }
-                else if (dataGridView1.Rows[row.Index].HeaderCell.Value.ToString() == "U")
-                {
-                    dataGridView1.Rows[row.Index].HeaderCell.Value = "D";
-                }
-            }
-        }
-        
-
-        string sqlOdler;
-        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            //获取修改之前的数据
-            sqlOdler = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-;        }
-
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //获取修改之后的数据
-            string sqlNew =dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            if (sqlOdler != sqlNew)
-            {
-                if (dataGridView1.Rows[e.RowIndex].HeaderCell.Value == null)
-                    dataGridView1.Rows[e.RowIndex].HeaderCell.Value = "U";
-                else if (dataGridView1.Rows[e.RowIndex].HeaderCell.Value.ToString() == "D")
-                    dataGridView1.Rows[e.RowIndex].HeaderCell.Value = "U";
-            }
-        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -194,8 +77,66 @@ namespace Prison
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void toolStripSplitButton_Add_Click(object sender, EventArgs e)
         {
+            Add add = new Add();
+            add.ShowDialog(this);
+        }
+
+        private void toolStripButton_Del_Click(object sender, EventArgs e)
+        {         
+
+            DialogResult dr = MessageBox.Show("确实要删除此信息吗?", "删除帐户",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);  //显示对话框
+            if (dr == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    int r = this.dataGridView1.CurrentRow.Index;
+                    string prison = this.dataGridView1.Rows[r].Cells["pri_id"].Value.ToString();
+                    //删除 datagridview1 的选中行
+                   // this.dataGridView1.Rows.Remove(this.dataGridView1.Rows[r]);
+                    this.dataGridView1.Rows.Remove(row);
+                    string sql = "";
+                    sql = "delete from PrisonAdd where pri_id='" + prison + "'";
+                    SqlCommand comm = new SqlCommand(sql, sqlCnt);
+                    comm.ExecuteNonQuery();
+                }
+                
+            }
+            
+        }
+
+        private void toolStripButton_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripButton_Modify_Click(object sender, EventArgs e)
+        {
+
+            //textBox1.Text= dataGridView1.Rows[a].Cells["pri_id"].Value.ToString();
+            Update upd = new Update();
+            int a = dataGridView1.CurrentRow.Index;
+            upd.textBox1.Text= dataGridView1.Rows[a].Cells["pri_name"].Value.ToString();
+            upd.textBox2.Text = dataGridView1.Rows[a].Cells["pri_age"].Value.ToString();
+            upd.textBox3.Text = dataGridView1.Rows[a].Cells["pri_sex"].Value.ToString();
+            upd.textBox4.Text = dataGridView1.Rows[a].Cells["pri_address"].Value.ToString();
+            upd.textBox5.Text = dataGridView1.Rows[a].Cells["pri_id"].Value.ToString();
+            upd.textBox6.Text = dataGridView1.Rows[a].Cells["pri_reason"].Value.ToString();
+            upd.textBox7.Text = dataGridView1.Rows[a].Cells["pri_ondata"].Value.ToString();
+            //string time= dataGridView1.Rows[a].Cells["pri_ondata"].Value.ToString();
+            // DateTime dt = DateTime.Parse(time);
+            // upd.dateTimePicker1.Text = dt.ToString();
+            upd.ShowDialog(this);
+
+        }
+
+    
+
+        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

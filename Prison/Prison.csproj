@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox_AvoutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox_AvoutUs.Designer.cs">
+      <DependentUpon>AboutBox_AvoutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,12 @@
     <Compile Include="FrmTime.Designer.cs">
       <DependentUpon>FrmTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Location.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Location.Designer.cs">
+      <DependentUpon>Location.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,20 +121,32 @@
     <Compile Include="FrmPoliceman.Designer.cs">
       <DependentUpon>FrmPoliceman.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSearchList.cs">
+    <Compile Include="People.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSearchList.Designer.cs">
-      <DependentUpon>FrmSearchList.cs</DependentUpon>
+    <Compile Include="People.Designer.cs">
+      <DependentUpon>People.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="zhuye.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="zhuye.Designer.cs">
       <DependentUpon>zhuye.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBox_AvoutUs.resx">
+      <DependentUpon>AboutBox_AvoutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdd.resx">
       <DependentUpon>FrmAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,14 +162,17 @@
     <EmbeddedResource Include="FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSearchList.resx">
-      <DependentUpon>FrmSearchList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTime.resx">
       <DependentUpon>FrmTime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Location.resx">
+      <DependentUpon>Location.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People.resx">
+      <DependentUpon>People.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -150,6 +183,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="zhuye.resx">
       <DependentUpon>zhuye.cs</DependentUpon>
     </EmbeddedResource>
