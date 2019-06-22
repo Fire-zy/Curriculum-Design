@@ -68,7 +68,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 138);
             this.label2.TabIndex = 4;
-            this.label2.Text = "已入狱犯人";
+            this.label2.Text = "入狱犯人";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 

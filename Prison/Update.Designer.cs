@@ -167,7 +167,7 @@
             this.button_Ok.Location = new System.Drawing.Point(519, 372);
             this.button_Ok.Margin = new System.Windows.Forms.Padding(4);
             this.button_Ok.Name = "button_Ok";
-            this.button_Ok.Size = new System.Drawing.Size(142, 45);
+            this.button_Ok.Size = new System.Drawing.Size(112, 45);
             this.button_Ok.TabIndex = 19;
             this.button_Ok.Text = "确定";
             this.button_Ok.UseVisualStyleBackColor = true;

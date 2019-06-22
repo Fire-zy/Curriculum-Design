@@ -131,12 +131,5 @@ namespace Prison
             upd.ShowDialog(this);
 
         }
-
-    
-
-        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

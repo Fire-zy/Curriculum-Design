@@ -60,8 +60,5 @@ namespace Prison
 
             //sqlCnt.Close();
         }
-        }
-
-        
-    
+    }
 }

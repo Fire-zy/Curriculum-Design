@@ -2,7 +2,6 @@ C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.Properties.Resources.res
 C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.csproj.GenerateResource.cache
 C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.csproj.CoreCompileInputs.cache
 C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.FrmAdd.resources
-C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.FrmHistory.resources
 C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.FrmPoliceman.resources
 C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.Login.resources
 C:\Users\ZY\source\repos\Prison\Prison\obj\Debug\Prison.zhuye.resources
